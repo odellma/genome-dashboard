@@ -1,0 +1,72 @@
+# Dependencies
+node_modules
+/.pnp
+.pnp.js
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# SvelteKit
+/.svelte-kit
+/build
+/dist
+.output
+
+# Deployment
+.vercel
+.netlify
+.wrangler
+
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.test
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vs/
+.vscode-test
+.vscode
+
+# OS
+Thumbs.db
+
+# Testing
+/coverage
+.nyc_output
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# SvelteKit specific
+.env.local
+.env.*.local
+
+# Optional npm cache directory
+.npm
+
+# Mac
+.DS_Store
