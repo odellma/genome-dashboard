@@ -1,20 +1,43 @@
-// src/lib/api/species.ts
+import { apiGet, apiPost, apiPut, apiDelete } from './client';
+import type { SpeciesReply, SpeciesRequest } from '$lib/contracts/types';
 
-import { PUBLIC_API_BASE_URL } from '$env/static/public';
-import type { Species } from '$lib/types/species';
+export function getSpecies(fetchFn: typeof fetch): Promise<SpeciesReply[]> {
+	return apiGet<SpeciesReply[]>(fetchFn, '/api/species');
+}
 
-export async function getSpecies(
-	fetchFn: typeof fetch
-): Promise<Species[]> {
+export function getSpeciesById(
+	fetchFn: typeof fetch,
+	id: number
+): Promise<SpeciesReply> {
+	return apiGet<SpeciesReply>(fetchFn, `/api/species/${id}`);
+}
 
-    console.log(`${PUBLIC_API_BASE_URL}/api/species`, 'species call');
-	const response = await fetchFn(
-		`${PUBLIC_API_BASE_URL}/api/species`
+export function createSpecies(
+	fetchFn: typeof fetch,
+	request: SpeciesRequest
+): Promise<SpeciesReply> {
+	return apiPost<SpeciesReply, SpeciesRequest>(
+		fetchFn,
+		'/api/species',
+		request
 	);
+}
 
-	if (!response.ok) {
-		throw new Error('Failed to load species');
-	}
+export function updateSpecies(
+	fetchFn: typeof fetch,
+	id: number,
+	request: SpeciesRequest
+): Promise<void> {
+	return apiPut<void, SpeciesRequest>(
+		fetchFn,
+		`/api/species/${id}`,
+		request
+	);
+}
 
-	return response.json();
+export function deleteSpecies(
+	fetchFn: typeof fetch,
+	id: number
+): Promise<void> {
+	return apiDelete<void>(fetchFn, `/api/species/${id}`);
 }
