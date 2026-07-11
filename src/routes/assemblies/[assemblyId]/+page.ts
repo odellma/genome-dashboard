@@ -10,11 +10,11 @@ export const load: PageLoad = async ({ params, fetch }) => {
     }
 
     const assembly = await getAssemblyById(fetch, assemblyId);
-
     const chromosomes = await getChromosomes(fetch, Number(params.assemblyId));
 
     return {
         assembly,
-        chromosomes
+        chromosomes,
+        breadcrumbs: [{label: assembly.name}]
     };
 }
