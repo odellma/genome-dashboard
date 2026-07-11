@@ -122,6 +122,9 @@
 					<td>
 						{assembly.isDefault ? 'Yes' : 'No'}
 					</td>
+					<td>
+						<a href={`/assemblies/${assembly.id}`}>View</a>
+					</td>
 				{/snippet}
 			</DataTable>
 		</Card>
