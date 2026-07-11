@@ -154,11 +154,6 @@
 		gap: 1rem;
 	}
 
-	.selection-panel h2 {
-		margin: 0;
-		font-size: 1.125rem;
-	}
-
 	.selection-controls {
 		display: flex;
 		align-items: end;
