@@ -1,0 +1,14 @@
+{
+  "navigationFallback": {
+    "rewrite": "/200.html",
+    "exclude": [
+      "/_app/*",
+      "/*.css",
+      "/*.js",
+      "/*.png",
+      "/*.jpg",
+      "/*.svg",
+      "/*.ico"
+    ]
+  }
+}
